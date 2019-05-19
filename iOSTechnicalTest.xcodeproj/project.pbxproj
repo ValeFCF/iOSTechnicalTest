@@ -20,6 +20,8 @@
 		3BACF27F2291C98600A47371 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACF27E2291C98600A47371 /* DetailViewController.swift */; };
 		3BACF2832291CF9700A47371 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACF2812291CF9700A47371 /* MovieTableViewCell.swift */; };
 		3BACF2842291CF9700A47371 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BACF2822291CF9700A47371 /* MovieTableViewCell.xib */; };
+		3BACF2862291DED900A47371 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACF2852291DED900A47371 /* Request.swift */; };
+		3BACF28A2291F9F900A47371 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACF2892291F9F900A47371 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		3BACF27E2291C98600A47371 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3BACF2812291CF9700A47371 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		3BACF2822291CF9700A47371 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		3BACF2852291DED900A47371 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		3BACF2892291F9F900A47371 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		3CF000AC8A1AD0950DF7353F /* libPods-iOSTechnicalTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSTechnicalTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC5AAC75814CA78F7DF7C23 /* Pods-iOSTechnicalTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTechnicalTest.debug.xcconfig"; path = "Target Support Files/Pods-iOSTechnicalTest/Pods-iOSTechnicalTest.debug.xcconfig"; sourceTree = "<group>"; };
 		DB66F944586EA4AD4D962F15 /* Pods-iOSTechnicalTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTechnicalTest.release.xcconfig"; path = "Target Support Files/Pods-iOSTechnicalTest/Pods-iOSTechnicalTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		3BACF24B2291B68D00A47371 /* iOSTechnicalTest */ = {
 			isa = PBXGroup;
 			children = (
+				3BACF2882291F9D000A47371 /* Extensions */,
 				3BACF2802291CF4D00A47371 /* Views */,
 				3BACF24C2291B68D00A47371 /* AppDelegate.swift */,
 				3BACF24E2291B68D00A47371 /* ViewController.swift */,
@@ -124,6 +129,7 @@
 				3BACF27A2291C94500A47371 /* CategoriesViewController.swift */,
 				3BACF27C2291C96500A47371 /* ResultsTableViewController.swift */,
 				3BACF27E2291C98600A47371 /* DetailViewController.swift */,
+				3BACF2872291DEE400A47371 /* Network */,
 			);
 			path = iOSTechnicalTest;
 			sourceTree = "<group>";
@@ -155,6 +161,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3BACF2872291DEE400A47371 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3BACF2852291DED900A47371 /* Request.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3BACF2882291F9D000A47371 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3BACF2892291F9F900A47371 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8DDDBC72DADCC60C202D502D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +191,6 @@
 				BDC5AAC75814CA78F7DF7C23 /* Pods-iOSTechnicalTest.debug.xcconfig */,
 				DB66F944586EA4AD4D962F15 /* Pods-iOSTechnicalTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -335,8 +356,10 @@
 				3BACF24F2291B68D00A47371 /* ViewController.swift in Sources */,
 				3BACF2832291CF9700A47371 /* MovieTableViewCell.swift in Sources */,
 				3BACF27F2291C98600A47371 /* DetailViewController.swift in Sources */,
+				3BACF2862291DED900A47371 /* Request.swift in Sources */,
 				3BACF24D2291B68D00A47371 /* AppDelegate.swift in Sources */,
 				3BACF27B2291C94500A47371 /* CategoriesViewController.swift in Sources */,
+				3BACF28A2291F9F900A47371 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,24 +11,42 @@ import UIKit
 class ResultsTableViewController: UITableViewController {
     
     var filter = ""
+    let request = Request.sharedInstance
+    var content: [[String : AnyObject]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("vale filter: \(filter)")
-        
-        setupDetailTableViewCell()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        setupDetailTableViewCell()
+        httpRequest()
     }
     
     internal func setupDetailTableViewCell() {
         self.tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil),
                                 forCellReuseIdentifier: "MovieTableViewCell")
+    }
+    
+    internal func httpRequest() {
+        request.performAsync(onSuccess: { (responseBody) in
+            guard let jsonBody = responseBody as? [String : AnyObject]
+                else {
+                    return
+            }
+            if let results = jsonBody["results"] as? [[String : AnyObject]] {
+                for result in results {
+                    self.content.append(result)
+                }
+                self.tableView.reloadData()
+            }
+            
+        }) { (error) in
+            debugPrint(error)
+        }
     }
 
     // MARK: - Table view data source
@@ -40,20 +58,23 @@ class ResultsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return content.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
         
-        cell.lblMovieName.text = "Los avengers"
-        cell.lblVoteAverage.text = "7.8"
+        cell.lblMovieName.text = content[indexPath.row] ["title"] as? String
+        
+        if let rating = content[indexPath.row] ["vote_average"] as? Double {
+            cell.lblVoteAverage.text = String(rating)
+        }
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "segueDetails", sender: nil)
+        performSegue(withIdentifier: "segueDetails", sender: indexPath.row)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -103,7 +124,9 @@ class ResultsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "segueDetails" {
             if let vcDetail = segue.destination as? DetailViewController {
-                
+                if let row = sender as? Int {
+                    vcDetail.contentDetail = self.content[row]
+                }
             }
         }
     }
