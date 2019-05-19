@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JIr-et-Q90">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,9 +13,9 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOSTechnicalTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -19,6 +23,129 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-527" y="33"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="QUa-w0-1eK">
+            <objects>
+                <viewController id="eRe-V6-nZE" customClass="CategoriesViewController" customModule="iOSTechnicalTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DWA-W0-2vL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DgB-lk-C60">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgR-tb-OC6">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="161.5"/>
+                                        <state key="normal" image="popular"/>
+                                        <connections>
+                                            <action selector="tapOnPopularSection:" destination="eRe-V6-nZE" eventType="touchUpInside" id="QYV-o0-Fpa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aji-SU-6cf">
+                                        <rect key="frame" x="0.0" y="171.5" width="320" height="161"/>
+                                        <state key="normal" image="toprated"/>
+                                        <connections>
+                                            <action selector="tapOnTopRatedSection:" destination="eRe-V6-nZE" eventType="touchUpInside" id="HkX-fJ-Y5r"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXf-B8-KIv">
+                                        <rect key="frame" x="0.0" y="342.5" width="320" height="161.5"/>
+                                        <state key="normal" image="upcoming"/>
+                                        <connections>
+                                            <action selector="tapOnUpcomingSection:" destination="eRe-V6-nZE" eventType="touchUpInside" id="pQl-AF-rYp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DgB-lk-C60" firstAttribute="top" secondItem="9Mu-HA-cUF" secondAttribute="top" id="H6H-SS-cPT"/>
+                            <constraint firstItem="DgB-lk-C60" firstAttribute="leading" secondItem="DWA-W0-2vL" secondAttribute="leading" id="LpV-DG-dLM"/>
+                            <constraint firstAttribute="trailing" secondItem="DgB-lk-C60" secondAttribute="trailing" id="W2V-fo-ln3"/>
+                            <constraint firstItem="DgB-lk-C60" firstAttribute="bottom" secondItem="9Mu-HA-cUF" secondAttribute="bottom" id="e1u-5j-UVj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9Mu-HA-cUF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Categories" id="zkE-AU-2LL"/>
+                    <connections>
+                        <segue destination="YnJ-9K-jWS" kind="show" identifier="segueResults" id="Hnv-tS-fe2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ige-Sw-bw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1839.375" y="32.74647887323944"/>
+        </scene>
+        <!--Results Table View Controller-->
+        <scene sceneID="AI9-Qu-3un">
+            <objects>
+                <tableViewController id="YnJ-9K-jWS" customClass="ResultsTableViewController" customModule="iOSTechnicalTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DJm-Xy-T0f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4I1-Jm-085">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4I1-Jm-085" id="key-rr-Y9d">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YnJ-9K-jWS" id="Fs0-8x-c3O"/>
+                            <outlet property="delegate" destination="YnJ-9K-jWS" id="L7p-ui-id4"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="fIA-Au-kC0" kind="show" identifier="segueDetails" id="IZL-mr-zxJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7P-Er-9MU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2761.875" y="32.74647887323944"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="gaq-l3-2A4">
+            <objects>
+                <viewController id="fIA-Au-kC0" customClass="DetailViewController" customModule="iOSTechnicalTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wR3-sf-nar">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="PPZ-P4-7yK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OWz-hU-dEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3624" y="33"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7pt-0c-wKu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JIr-et-Q90" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ytX-4F-bjI">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eRe-V6-nZE" kind="relationship" relationship="rootViewController" id="N3F-r4-8Eg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ADU-KR-A0M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841.875" y="32.74647887323944"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="popular" width="1024" height="479"/>
+        <image name="toprated" width="582" height="582"/>
+        <image name="upcoming" width="921" height="753"/>
+    </resources>
 </document>
